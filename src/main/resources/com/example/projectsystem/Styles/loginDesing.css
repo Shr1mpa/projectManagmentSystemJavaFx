@@ -1,0 +1,51 @@
+.left-form {
+-fx-background-color: linear-gradient(to bottom right, #2f3f89, #9231b5);
+}
+.mainPanel {
+    -fx-background-image: url("Images/MainBGWhite2.jpg");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 700 700;
+    -fx-background-position: center center;
+    -fx-effect: dropshadow(gaussian, gray, 10, 0.5, 5, 5);
+}
+
+.registerWindow {
+    -fx-background-color: linear-gradient(to bottom, white, #D3D3D3);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0, 0, 0);
+}
+.background {
+    -fx-background-color: #fff;
+    -fx-opacity: 0.3;
+}
+.logo {
+    -fx-background-image: url("Images/LogoPr.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 100 100;
+}
+.register-button {
+    -fx-background-color: #635DFF; /* Колір кнопки за замовчуванням */
+}
+
+.register-button:hover {
+    -fx-background-color: #7B76FF; /* Світліший колір кнопки при наведенні */
+}
+/* Змінюємо колір галочки при відмітці */
+.checkbox:selected .box > .mark {
+    -fx-background-color: #635DFF; /* Синій колір галочки */
+}
+.text-field {
+    -fx-background-color: transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: black;
+}
+
+/* Стиль для текстового поля при наведенні */
+.text-field:hover {
+    -fx-border-color: blue; /* Колір нижньої лінії при наведенні */
+}
+.combo-box {
+    -fx-padding: 0 0 3 0; /* Подушечка только снизу */
+    -fx-border-color: black; /* Цвет линии */
+    -fx-border-width: 0 0 1 0; /* Толщина линии только снизу */
+    -fx-background-color: transparent; /* Прозрачный фон */
+}
