@@ -11,6 +11,7 @@ module com.example.projectsystem {
     requires org.hibernate.orm.core;
 
 
+
     opens com.example.projectsystem to javafx.fxml;
     exports com.example.projectsystem;
 }
