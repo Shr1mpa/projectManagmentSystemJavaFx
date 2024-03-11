@@ -1,6 +1,7 @@
 package com.example.projectsystem.Models;
 
 import lombok.*;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 
@@ -23,9 +24,10 @@ public class User {
     private String lastName;
     @Column(name = "phone_number")
     private String phoneNumber;
-    @Lob
-    private byte[] photo;
     @Enumerated(EnumType.STRING)
     private Role role;
+    @Column(name = "photo")
+    @Type(type="org.hibernate.type.BinaryType")
+    private byte[] photo;
 
 }

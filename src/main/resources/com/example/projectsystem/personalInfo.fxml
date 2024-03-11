@@ -22,10 +22,10 @@
                   <Font size="15.0" />
                </font>
             </TextField>
-            <TextField layoutX="51.0" layoutY="164.0" promptText="First name" />
-            <TextField layoutX="227.0" layoutY="165.0" promptText="Last name" />
+            <TextField fx:id="firstNameField" layoutX="51.0" layoutY="164.0" promptText="First name" />
+            <TextField fx:id="LastNameField" layoutX="227.0" layoutY="165.0" promptText="Last name" />
             <ComboBox fx:id="roleComboBox" layoutX="226.0" layoutY="222.0" prefWidth="150.0" promptText="Role" />
-            <TextField layoutX="52.0" layoutY="225.0" promptText="Phone number" />
+            <TextField fx:id="phoneField" layoutX="52.0" layoutY="225.0" promptText="Phone number" />
             <Button layoutX="150.0" layoutY="289.0" mnemonicParsing="false" onMouseClicked="#registration" prefHeight="28.0" prefWidth="101.0" styleClass="register-button" text="Register" textFill="WHITE">
                <font>
                   <Font name="Segoe UI Bold" size="16.0" />

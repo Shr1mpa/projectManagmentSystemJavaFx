@@ -13,5 +13,6 @@ module com.example.projectsystem {
 
 
     opens com.example.projectsystem to javafx.fxml;
+    opens com.example.projectsystem.Models;
     exports com.example.projectsystem;
 }

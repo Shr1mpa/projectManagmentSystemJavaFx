@@ -49,3 +49,14 @@
     -fx-border-width: 0 0 1 0; /* Толщина линии только снизу */
     -fx-background-color: transparent; /* Прозрачный фон */
 }
+.invalid-password {
+    -fx-background-color: transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: red;
+}
+
+.valid-password {
+    -fx-background-color: transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: black;
+}
