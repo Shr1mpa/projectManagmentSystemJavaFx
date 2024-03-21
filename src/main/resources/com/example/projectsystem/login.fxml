@@ -24,7 +24,7 @@
                   <Font size="15.0" />
                </font>
             </TextField>
-            <Button fx:id="loginButton" layoutX="131.0" layoutY="320.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="114.0" styleClass="register-button" text="Login" textFill="WHITE">
+            <Button fx:id="loginButton" layoutX="131.0" layoutY="320.0" mnemonicParsing="false" onAction="#authorize" prefHeight="31.0" prefWidth="114.0" styleClass="register-button" text="Login" textFill="WHITE">
                <font>
                   <Font name="Segoe UI Bold" size="16.0" />
                </font>

@@ -79,14 +79,13 @@ public class InfoController {
             user.setFirstName(firstNameField.getText());
             user.setLastName(LastNameField.getText());
             user.setPhoneNumber(phoneField.getText());
-            File photoFile = new File("D:\\JavaProjects\\ProjectSystem\\src\\main\\resources\\com\\example\\projectsystem\\Styles\\Images\\Group.png");
+            File photoFile = new File("D:\\JavaProjects\\ProjectSystem\\src\\main\\resources\\com\\example\\projectsystem\\Styles\\Images\\defaultPhoto.jpg");
             byte[] photoBytes = Files.readAllBytes(photoFile.toPath());
             user.setPhoto(photoBytes);
 
-            try (SessionFactory sessionFactory = HibernateUtil.getSessionFactory()) {
-                UserDao userDao = new UserDao(sessionFactory);
-                userDao.save(user);
-            }
+            SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+            UserDao userDao = new UserDao(sessionFactory);
+            userDao.save(user);
         } catch (RegisterException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Registration error");

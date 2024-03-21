@@ -23,15 +23,15 @@
     -fx-background-size: 100 100;
 }
 .register-button {
-    -fx-background-color: #635DFF; /* Колір кнопки за замовчуванням */
+    -fx-background-color: #635DFF;
 }
 
 .register-button:hover {
-    -fx-background-color: #7B76FF; /* Світліший колір кнопки при наведенні */
+    -fx-background-color: #7B76FF;
 }
-/* Змінюємо колір галочки при відмітці */
+
 .checkbox:selected .box > .mark {
-    -fx-background-color: #635DFF; /* Синій колір галочки */
+    -fx-background-color: #635DFF;
 }
 .text-field {
     -fx-background-color: transparent;
@@ -39,15 +39,15 @@
     -fx-border-color: black;
 }
 
-/* Стиль для текстового поля при наведенні */
+
 .text-field:hover {
-    -fx-border-color: blue; /* Колір нижньої лінії при наведенні */
+    -fx-border-color: blue;
 }
 .combo-box {
-    -fx-padding: 0 0 3 0; /* Подушечка только снизу */
-    -fx-border-color: black; /* Цвет линии */
-    -fx-border-width: 0 0 1 0; /* Толщина линии только снизу */
-    -fx-background-color: transparent; /* Прозрачный фон */
+    -fx-padding: 0 0 3 0;
+    -fx-border-color: black;
+    -fx-border-width: 0 0 1 0;
+    -fx-background-color: transparent;
 }
 .invalid-password {
     -fx-background-color: transparent;

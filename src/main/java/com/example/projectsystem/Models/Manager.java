@@ -1,4 +1,5 @@
 package com.example.projectsystem.Models;
 
-public class Manager {
+public class Manager extends User {
+
 }

@@ -10,6 +10,9 @@
     <property name="connection.driver_class">org.postgresql.Driver</property>
     <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQL9Dialect</property>
     <mapping class="com.example.projectsystem.Models.User"/>
+    <mapping class="com.example.projectsystem.Models.Owner"/>
+    <mapping class="com.example.projectsystem.Models.Project"/>
+    <mapping class="com.example.projectsystem.Models.Task"/>
     <!-- <property name="connection.username"/> -->
     <!-- <property name="connection.password"/> -->
 

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1037.0" stylesheets="@Styles/workerForm.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectsystem.ManagerFormController">
+   <children>
+      <TabPane layoutX="92.0" prefHeight="600.0" prefWidth="945.0" side="LEFT" styleClass="tab-menu" stylesheets="@Styles/workerForm.css" tabClosingPolicy="UNAVAILABLE" tabMinHeight="100.0">
+        <tabs>
+          <Tab fx:id="projectTab" text="ProjectTab">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="771.0" stylesheets="@Styles/workerForm.css">
+                     <children>
+                        <TableView layoutY="68.0" prefHeight="200.0" prefWidth="838.0">
+                          <columns>
+                            <TableColumn prefWidth="136.0" text="Project Name" />
+                            <TableColumn prefWidth="90.0" text="Owner" />
+                              <TableColumn prefWidth="64.0" text="Status" />
+                              <TableColumn prefWidth="88.0" text="Start Date" />
+                              <TableColumn prefWidth="112.0" text="Completion Date" />
+                              <TableColumn prefWidth="119.0" text="Days" />
+                              <TableColumn text="Tasks" />
+                              <TableColumn prefWidth="148.0" text="Progres" />
+                          </columns>
+                        </TableView>
+                        <TextField layoutX="14.0" layoutY="24.0" />
+                        <Button layoutX="171.0" layoutY="24.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="38.0" styleClass="button-search">
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="15" />
+                           </graphic>
+                        </Button>
+                        <ComboBox layoutX="221.0" layoutY="24.0" prefHeight="25.0" prefWidth="100.0" />
+                        <ComboBox layoutX="334.0" layoutY="24.0" prefHeight="25.0" prefWidth="101.0" />
+                        <Button layoutX="446.0" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#addButton" styleClass="button-search">
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="PLUS" size="15" />
+                           </graphic>
+                        </Button>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="taskTab" text="TasksTab">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <AnchorPane layoutX="19.0" layoutY="103.0" prefHeight="322.0" prefWidth="240.0" styleClass="task-panel" stylesheets="@Styles/TaskDesign.css" />
+                        <AnchorPane layoutX="19.0" layoutY="59.0" prefHeight="36.0" prefWidth="820.0" styleClass="bg-panel-task" stylesheets="@Styles/TaskDesign.css">
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="6.0" prefHeight="24.0" prefWidth="125.0" styleClass="toDo-label" stylesheets="@Styles/TaskDesign.css" text="TO DO" textFill="WHITE">
+                                 <font>
+                                    <Font name="Segoe UI Bold" size="19.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="219.0" layoutY="4.0" text="1" textFill="#515151">
+                                 <font>
+                                    <Font size="19.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="281.0" layoutY="6.0" prefHeight="24.0" prefWidth="152.0" styleClass="inprogress-label" stylesheets="@Styles/TaskDesign.css" text="IN PROGRESS" textFill="WHITE">
+                                 <font>
+                                    <Font name="Segoe UI Bold" size="19.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="507.0" layoutY="4.0" text="1" textFill="#515151">
+                                 <font>
+                                    <Font size="19.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="560.0" layoutY="6.0" prefHeight="24.0" prefWidth="152.0" styleClass="finished-label" stylesheets="@Styles/TaskDesign.css" text="FINISHED" textFill="WHITE">
+                                 <font>
+                                    <Font name="Segoe UI Bold" size="19.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="776.0" layoutY="4.0" text="1" textFill="#515151">
+                                 <font>
+                                    <Font size="19.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="296.0" layoutY="103.0" prefHeight="322.0" prefWidth="240.0" styleClass="task-panel" stylesheets="@Styles/TaskDesign.css" />
+                        <AnchorPane layoutX="573.0" layoutY="103.0" prefHeight="322.0" prefWidth="240.0" styleClass="task-panel" stylesheets="@Styles/TaskDesign.css" />
+                        <Label layoutX="29.0" layoutY="14.0" text="Tasks">
+                           <font>
+                              <Font name="Segoe UI" size="25.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="109.0" layoutY="17.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="21.0" styleClass="button-search">
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="PLUS" size="17" text="" />
+                           </graphic>
+                        </Button>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="accountTab" text="AccountTab">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Accordion layoutX="86.0" layoutY="218.0" />
+                        <AnchorPane layoutX="189.0" layoutY="190.0" prefHeight="60.0" prefWidth="60.0" styleClass="bg-avatar" />
+                        <AnchorPane layoutX="91.0" layoutY="25.0" prefHeight="60.0" prefWidth="60.0" styleClass="bg-avatar" />
+                        <Circle fx:id="photoUserInAccount" fill="#a6c3df" layoutX="130.0" layoutY="134.0" radius="72.0" stroke="BLACK" strokeType="INSIDE" />
+                        <Label layoutX="257.0" layoutY="55.0" text="First name" />
+                        <Label layoutX="444.0" layoutY="55.0" text="Last name" />
+                        <TextField fx:id="firstNameField" layoutX="257.0" layoutY="85.0" />
+                        <TextField fx:id="lastNameField" layoutX="444.0" layoutY="85.0" />
+                        <Label layoutX="257.0" layoutY="125.0" text="Username" />
+                        <TextField fx:id="usernameField" layoutX="257.0" layoutY="155.0" />
+                        <Label layoutX="444.0" layoutY="125.0" text="Email" />
+                        <TextField fx:id="emailField" layoutX="444.0" layoutY="155.0" />
+                        <Label layoutX="417.0" layoutY="210.0" text="Role" />
+                        <ComboBox fx:id="roleBox" layoutX="354.0" layoutY="230.0" prefWidth="150.0" />
+                        <Button layoutX="365.0" layoutY="300.0" mnemonicParsing="false" text="Save" />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <AnchorPane prefHeight="600.0" prefWidth="200.0" styleClass="left-form" stylesheets="@Styles/workerForm.css">
+         <children>
+            <Label fx:id="username" layoutX="100.0" layoutY="39.0" text="Bill Gates" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="100.0" layoutY="70.0" text="Manager" textFill="#003784">
+               <font>
+                  <Font name="Segoe UI Bold" size="13.0" />
+               </font>
+            </Label>
+            <Button fx:id="projectButton" alignment="BASELINE_LEFT" layoutX="23.0" layoutY="111.0" mnemonicParsing="false" onMouseClicked="#changeToPtojectTab" prefHeight="36.0" prefWidth="175.0" styleClass="tab-buttons" text="Projects" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="17.0" />
+               </font>
+               <graphic>
+                  <AnchorPane prefHeight="17.0" prefWidth="13.0" styleClass="icon-font" />
+               </graphic></Button>
+            <AnchorPane layoutX="23.0" layoutY="32.0" prefHeight="60.0" prefWidth="60.0" styleClass="bg-avatar">
+               <children>
+                  <Circle fx:id="photoUser" fill="#a6c3df" layoutX="30.0" layoutY="30.0" radius="28.0" stroke="BLACK" strokeType="INSIDE" />
+               </children>
+            </AnchorPane>
+            <Button fx:id="taskButton" alignment="BASELINE_LEFT" layoutX="23.0" layoutY="161.0" mnemonicParsing="false" onMouseClicked="#changeToTaskTab" prefHeight="36.0" prefWidth="175.0" styleClass="tab-buttons" text="Tasks" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="17.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="SITEMAP" />
+               </graphic>
+            </Button>
+            <Button fx:id="accountButton" alignment="BASELINE_LEFT" layoutX="23.0" layoutY="209.0" mnemonicParsing="false" onMouseClicked="#changeToAccountTab" prefHeight="36.0" prefWidth="175.0" styleClass="tab-buttons" text="Account" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="17.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="USER" />
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

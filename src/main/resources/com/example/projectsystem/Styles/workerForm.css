@@ -1,0 +1,47 @@
+.left-form {
+    -fx-background-color: #635DFF;
+}
+.avatar {
+    -fx-background-radius: 100px;
+    -fx-background-color: #bbb;
+}
+.bg-avatar {
+    -fx-background-radius: 100px;
+    -fx-background-color: #fff;
+}
+.tab-pane .tab-header-area {
+    -fx-tab-header-area: null;
+}
+.tab-menu {
+    -fx-tab-min-width: 100;
+    -fx-tab-max-width: 100;
+    -fx-tab-max-height: 30;
+    -fx-tab-graphic-text-gap: 0;
+    -fx-tab-label-wrap: false;
+    -fx-background-color: #fff;
+}
+.tab-buttons {
+    -fx-background-color: #635DFF;
+
+}
+.icon-font {
+    -fx-background-image: url("Images/graphWhite.png");
+}
+.table-view .column-header > .label {
+    -fx-text-fill: #fff;
+}
+.table-view .column-header {
+    -fx-background-color: #8c75ff;
+}
+.combo-box {
+    -fx-background-color: #8c75ff;
+}
+.button-search {
+    -fx-background-color: #8c75ff;
+}
+.combo-box .arrow-button .arrow {
+    -fx-background-color: white;
+}
+.save-acc-button {
+    -fx-background-color: #635DFF;
+}

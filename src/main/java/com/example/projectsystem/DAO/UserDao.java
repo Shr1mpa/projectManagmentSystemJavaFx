@@ -17,7 +17,13 @@ public class UserDao implements Dao<User>{
     }
     @Override
     public Optional<User> get(long id) {
-        return Optional.empty();
+        try (Session session = sessionFactory.openSession()) {
+            User user = session.get(User.class, id);
+            return Optional.ofNullable(user);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return Optional.empty();
+        }
     }
 
     @Override
@@ -63,5 +69,17 @@ public class UserDao implements Dao<User>{
 
         }
 
+    }
+    public Optional<User> getByUsernameAndPassword(String username, String password) {
+        try (Session session = sessionFactory.openSession()) {
+            Query<User> query = session.createQuery("FROM User WHERE username = :username AND password = :password", User.class);
+            query.setParameter("username", username);
+            query.setParameter("password", password);
+            User user = query.uniqueResult();
+            return Optional.ofNullable(user);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return Optional.empty();
+        }
     }
 }

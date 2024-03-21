@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.92" prefHeight="389.0" prefWidth="352.0" styleClass="body" stylesheets="@Styles/ownerFormStyle.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectsystem.AddOwnerController">
+   <children>
+      <Button layoutX="150.0" layoutY="342.0" mnemonicParsing="false" text="Button" />
+      <AnchorPane fx:id="ownerInfoPannel" layoutX="54.0" layoutY="65.0" prefHeight="264.0" prefWidth="243.0">
+         <children>
+            <TextField layoutX="46.0" layoutY="37.0" />
+            <TextField layoutX="47.0" layoutY="98.0" />
+            <TextField layoutX="47.0" layoutY="153.0" />
+            <TextField layoutX="46.0" layoutY="219.0" />
+            <Label layoutX="47.0" layoutY="14.0" text="First name" />
+            <Label layoutX="47.0" layoutY="73.0" text="Last name" />
+            <Label layoutX="47.0" layoutY="135.0" text="Email" />
+            <Label layoutX="47.0" layoutY="192.0" text="Phone" />
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="41.0" prefWidth="352.0" styleClass="top-panel" stylesheets="@Styles/projectAddCss.css">
+         <children>
+            <Label layoutX="143.0" layoutY="9.0" prefHeight="23.0" prefWidth="65.0" text="Owner" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

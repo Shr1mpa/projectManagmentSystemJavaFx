@@ -1,0 +1,20 @@
+.task-panel {
+    -fx-background-color: #dadeed;
+    -fx-background-radius: 20px;
+    -fx-effect: dropshadow(gaussian, #bbb, 10, 0.5, 5, 5);
+}
+.toDo-label {
+    -fx-background-color: #FB9B50;
+    -fx-background-radius: 5px;
+}
+.bg-panel-task {
+    -fx-background-color: #f0f1f5;
+}
+.inprogress-label {
+    -fx-background-color: #5ff599;
+    -fx-background-radius: 5px;
+}
+.finished-label {
+    -fx-background-color: #f55b77;
+    -fx-background-radius: 5px;
+}
