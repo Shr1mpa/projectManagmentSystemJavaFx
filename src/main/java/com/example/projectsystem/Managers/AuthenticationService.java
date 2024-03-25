@@ -7,7 +7,7 @@ import org.hibernate.SessionFactory;
 
 import java.util.Optional;
 
-public class AuthenticationManager {
+public class AuthenticationService {
     private static final SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 
     public static Optional<User> authenticate(String username, String password) {

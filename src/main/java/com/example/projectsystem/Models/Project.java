@@ -31,5 +31,8 @@ public class Project {
     private LocalDate endDate;
     @OneToMany(mappedBy = "project", cascade = CascadeType.ALL)
     private List<Task> tasks;
+    public int getNumberOfTasks() {
+        return tasks.size();
+    }
 
 }

@@ -45,3 +45,17 @@
 .save-acc-button {
     -fx-background-color: #635DFF;
 }
+.table-view .table-cell {
+    -fx-font-family: 'Segoe UI';
+    -fx-alignment: CENTER;
+}
+.in-progress {
+    -fx-background-color: yellow;
+}
+
+.completed {
+    -fx-background-color: green;
+}
+.top-panel {
+    -fx-background-color: #635DFF;
+}

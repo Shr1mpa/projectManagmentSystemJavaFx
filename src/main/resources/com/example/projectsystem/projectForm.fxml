@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="429.0" prefWidth="414.0" stylesheets="@Styles/projectAddCss.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectsystem.AddProjectController">
    <children>
       <AnchorPane prefHeight="36.0" prefWidth="414.0" styleClass="top-panel" stylesheets="@Styles/projectAddCss.css">
@@ -21,26 +20,26 @@
          </children>
       </AnchorPane>
       <Label layoutX="76.0" layoutY="99.0" text="Project" />
-      <TextField layoutX="144.0" layoutY="95.0" />
+      <TextField fx:id="projectName" layoutX="144.0" layoutY="95.0" />
       <Label layoutX="76.0" layoutY="146.0" text="Owner" />
-      <ComboBox layoutX="144.0" layoutY="142.0" prefWidth="150.0" />
+      <ComboBox fx:id="ownersBox" layoutX="143.0" layoutY="142.0" prefWidth="150.0" />
       <Button fx:id="addOwnerBurron" layoutX="308.0" layoutY="140.0" mnemonicParsing="false" onAction="#addOwner" prefHeight="19.0" prefWidth="21.0" text="+">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
       <Label layoutX="76.0" layoutY="190.0" text="Status" />
-      <ComboBox layoutX="143.0" layoutY="186.0" prefWidth="150.0" />
+      <ComboBox fx:id="statusBox" layoutX="143.0" layoutY="186.0" prefWidth="150.0" />
       <Label layoutX="78.0" layoutY="237.0" text="Start date" />
-      <DatePicker layoutX="144.0" layoutY="233.0" />
+      <DatePicker fx:id="startDateText" layoutX="144.0" layoutY="233.0" />
       <Label layoutX="78.0" layoutY="285.0" text="End date" />
-      <DatePicker layoutX="144.0" layoutY="290.0" />
+      <DatePicker fx:id="endDateText" layoutX="144.0" layoutY="290.0" />
       <Label layoutX="165.0" layoutY="54.0" text="Add project">
          <font>
             <Font name="Segoe UI Bold" size="15.0" />
          </font>
       </Label>
-      <Button layoutX="171.0" layoutY="339.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" styleClass="add-button" text="ADD" textFill="WHITE">
+      <Button fx:id="addProjectButton" layoutX="171.0" layoutY="339.0" mnemonicParsing="false" onAction="#addProject" prefHeight="30.0" prefWidth="70.0" styleClass="add-button" text="ADD" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>

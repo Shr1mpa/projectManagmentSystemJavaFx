@@ -1,11 +1,14 @@
 package com.example.projectsystem.DAO;
 
 import com.example.projectsystem.Exceptions.RegisterException;
+import com.example.projectsystem.Models.Role;
 import com.example.projectsystem.Models.User;
+import com.example.projectsystem.Models.Worker;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -32,7 +35,7 @@ public class UserDao implements Dao<User>{
     }
 
     @Override
-    public void save(User entity) throws RegisterException{
+    public void save(User entity){
         try (Session session = sessionFactory.openSession()) {
             checkUserExist(entity);
             session.beginTransaction();
@@ -51,7 +54,7 @@ public class UserDao implements Dao<User>{
 
     }
 
-    private void checkUserExist (User entity) throws RegisterException {
+    private void checkUserExist (User entity) {
         try (Session session = sessionFactory.openSession()) {
             // Проверяем, существует ли пользователь с таким же именем пользователя
             Query<User> usernameQuery = session.createQuery("FROM User WHERE username = :username", User.class);
@@ -81,5 +84,17 @@ public class UserDao implements Dao<User>{
             e.printStackTrace();
             return Optional.empty();
         }
+    }
+    public List<User> getAllWorkers() {
+        try (Session session = sessionFactory.openSession()) {
+            String hql = "FROM User WHERE role != :role";
+            Query<User> query = session.createQuery(hql, User.class);
+            query.setParameter("role", Role.MANAGER);
+            return query.list();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return Collections.emptyList();
+        }
+
     }
 }

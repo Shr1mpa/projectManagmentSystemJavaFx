@@ -8,7 +8,7 @@ public interface Dao<T> {
 
     List<T> getAll();
 
-    void save(T entity) throws Exception;
+    void save(T entity);
 
     void update(T entity, String[] params);
 

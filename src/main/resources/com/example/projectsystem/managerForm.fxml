@@ -14,24 +14,25 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1037.0" stylesheets="@Styles/workerForm.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectsystem.ManagerFormController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" stylesheets="@Styles/workerForm.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectsystem.ManagerFormController">
    <children>
-      <TabPane layoutX="92.0" prefHeight="600.0" prefWidth="945.0" side="LEFT" styleClass="tab-menu" stylesheets="@Styles/workerForm.css" tabClosingPolicy="UNAVAILABLE" tabMinHeight="100.0">
+      <TabPane layoutX="92.0" prefHeight="600.0" prefWidth="1008.0" side="LEFT" styleClass="tab-menu" stylesheets="@Styles/workerForm.css" tabClosingPolicy="UNAVAILABLE" tabMinHeight="100.0">
         <tabs>
           <Tab fx:id="projectTab" text="ProjectTab">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="771.0" stylesheets="@Styles/workerForm.css">
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="881.0" stylesheets="@Styles/workerForm.css">
                      <children>
-                        <TableView layoutY="68.0" prefHeight="200.0" prefWidth="838.0">
+                        <TableView fx:id="table" layoutY="68.0" prefHeight="200.0" prefWidth="902.0" stylesheets="@Styles/workerForm.css">
                           <columns>
-                            <TableColumn prefWidth="136.0" text="Project Name" />
-                            <TableColumn prefWidth="90.0" text="Owner" />
-                              <TableColumn prefWidth="64.0" text="Status" />
-                              <TableColumn prefWidth="88.0" text="Start Date" />
-                              <TableColumn prefWidth="112.0" text="Completion Date" />
-                              <TableColumn prefWidth="119.0" text="Days" />
-                              <TableColumn text="Tasks" />
+                            <TableColumn fx:id="nameColumn" prefWidth="136.0" text="Project Name" />
+                            <TableColumn fx:id="ownerColumn" prefWidth="90.0" text="Owner" />
+                              <TableColumn fx:id="statusColumn" prefWidth="93.5999755859375" text="Status" />
+                              <TableColumn fx:id="startDateColumn" prefWidth="91.20001220703125" text="Start Date" />
+                              <TableColumn fx:id="endDateColumn" prefWidth="119.99996948242188" text="Completion Date" />
+                              <TableColumn fx:id="daysColumn" prefWidth="58.4000244140625" text="Days" />
+                              <TableColumn fx:id="tasksColumn" prefWidth="101.5999755859375" text="Tasks" />
                               <TableColumn prefWidth="148.0" text="Progres" />
+                              <TableColumn fx:id="changeData" prefWidth="75.0" />
                           </columns>
                         </TableView>
                         <TextField layoutX="14.0" layoutY="24.0" />

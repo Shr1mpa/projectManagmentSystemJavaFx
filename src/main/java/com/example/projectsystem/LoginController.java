@@ -1,6 +1,6 @@
 package com.example.projectsystem;
 
-import com.example.projectsystem.Managers.AuthenticationManager;
+import com.example.projectsystem.Managers.AuthenticationService;
 import com.example.projectsystem.Models.Role;
 import com.example.projectsystem.Models.User;
 import javafx.event.ActionEvent;
@@ -70,7 +70,7 @@ public class LoginController {
         String username = usernameField.getText();
         String password = passwordFiels.getText();
 
-        Optional<User> userOptional = AuthenticationManager.authenticate(username, password);
+        Optional<User> userOptional = AuthenticationService.authenticate(username, password);
         if (userOptional.isPresent()) {
             user = userOptional.get();
             if (user.getRole() == Role.MANAGER) {
