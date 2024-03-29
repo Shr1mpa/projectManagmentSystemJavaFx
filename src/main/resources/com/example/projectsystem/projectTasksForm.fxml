@@ -8,10 +8,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" stylesheets="@Styles/workerForm.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectsystem.AddTaskController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="900.0" stylesheets="@Styles/workerForm.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectsystem.AddTaskController">
    <children>
-      <AnchorPane prefHeight="40.0" prefWidth="800.0" styleClass="top-panel">
+      <AnchorPane prefHeight="40.0" prefWidth="900.0" styleClass="top-panel">
          <children>
             <Label fx:id="projectNameLabel" layoutX="21.0" layoutY="12.0" prefHeight="22.0" prefWidth="113.0" text="Project name" textFill="WHITE">
                <font>
@@ -20,16 +19,17 @@
             </Label>
          </children>
       </AnchorPane>
-      <TableView layoutY="78.0" prefHeight="200.0" prefWidth="800.0">
+      <TableView fx:id="table" layoutY="78.0" prefHeight="200.0" prefWidth="900.0">
         <columns>
-          <TableColumn prefWidth="107.0" text="Name" />
-          <TableColumn prefWidth="86.0" text="Project" />
-            <TableColumn prefWidth="84.0" text="Worker" />
-            <TableColumn prefWidth="74.0" text="Status" />
-            <TableColumn prefWidth="82.0" text="Add Date" />
-            <TableColumn prefWidth="95.0" text="End Date" />
-            <TableColumn prefWidth="221.0" text="Description" />
-            <TableColumn minWidth="0.0" prefWidth="50.0" />
+          <TableColumn fx:id="nameColumn" prefWidth="107.0" text="Name" />
+          <TableColumn fx:id="projectColumn" prefWidth="86.0" text="Project" />
+            <TableColumn fx:id="WorkerColumn" prefWidth="84.0" text="Worker" />
+            <TableColumn fx:id="StatusColumn" prefWidth="74.0" text="Status" />
+            <TableColumn fx:id="addDateColumn" prefWidth="82.0" text="Add Date" />
+            <TableColumn fx:id="StartDateColumn" prefWidth="75.0" text="Start Date" />
+            <TableColumn fx:id="endDateColumn" prefWidth="95.0" text="End Date" />
+            <TableColumn fx:id="descriptionColumn" prefWidth="221.0" text="Description" />
+            <TableColumn fx:id="editTask" minWidth="0.0" prefWidth="50.0" />
         </columns>
       </TableView>
       <Button layoutX="14.0" layoutY="47.0" mnemonicParsing="false" onMouseClicked="#addTask" styleClass="save-acc-button" textFill="WHITE">
@@ -43,6 +43,11 @@
       <Button fx:id="deleteTuskButton" layoutX="45.0" layoutY="46.0" mnemonicParsing="false" onMouseClicked="#deleteTask" styleClass="save-acc-button">
          <graphic>
             <FontAwesomeIconView fill="WHITE" glyphName="TRASH" text="" />
+         </graphic>
+      </Button>
+      <Button layoutX="78.0" layoutY="47.0" mnemonicParsing="false" onMouseClicked="#updateData" prefHeight="23.0" prefWidth="30.0" styleClass="tab-buttons">
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="REPEAT" />
          </graphic>
       </Button>
    </children>

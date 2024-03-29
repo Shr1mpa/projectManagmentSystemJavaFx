@@ -29,7 +29,7 @@ public class Project {
     private LocalDate startDate;
     @Column(name = "end_date")
     private LocalDate endDate;
-    @OneToMany(mappedBy = "project", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "project", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Task> tasks;
     public int getNumberOfTasks() {
         return tasks.size();

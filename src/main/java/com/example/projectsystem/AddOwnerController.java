@@ -1,5 +1,7 @@
 package com.example.projectsystem;
 
+import com.example.projectsystem.Alerts.AlertCreator;
+import com.example.projectsystem.Alerts.AlertManager;
 import com.example.projectsystem.DAO.OwnerDao;
 import com.example.projectsystem.DAO.UserDao;
 import com.example.projectsystem.Models.Owner;
@@ -53,11 +55,8 @@ public class AddOwnerController {
         SessionFactory session = HibernateUtil.getSessionFactory();
         OwnerDao ownerDao = new OwnerDao(session);
         ownerDao.save(owner);
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Success");
-        alert.setHeaderText(null);
-        alert.setContentText("Owner successfully added!");
-        alert.showAndWait();
+        AlertCreator creator = new AlertManager();
+        creator.createAlert("Owner successfully added!", "Success", null, Alert.AlertType.INFORMATION);
         if (secondFormController != null) {
             secondFormController.updateComboBoxData();
         }

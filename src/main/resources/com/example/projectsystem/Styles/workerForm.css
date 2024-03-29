@@ -59,3 +59,13 @@
 .top-panel {
     -fx-background-color: #635DFF;
 }
+.progress-bar .track {
+        -fx-background-radius: 10;
+}
+
+.progress-bar .bar {
+    -fx-background-color: linear-gradient(to right, #FFD700 0%, #F8E71C 25%, #A6CE39 50%, #32CD32 75%, #32CD32 100%);
+    -fx-background-radius: 10;
+}
+
+

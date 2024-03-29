@@ -55,7 +55,6 @@ public class InfoController {
     @FXML
     void changeToLOgin(MouseEvent event) throws IOException {
         Stage stage = (Stage) changeScene.getScene().getWindow();
-        // do what you have to do
         stage.close();
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("login.fxml"));
         Parent root1 = (Parent) fxmlLoader.load();

@@ -22,7 +22,7 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="881.0" stylesheets="@Styles/workerForm.css">
                      <children>
-                        <TableView fx:id="table" layoutY="68.0" prefHeight="200.0" prefWidth="902.0" stylesheets="@Styles/workerForm.css">
+                        <TableView fx:id="table" layoutY="68.0" prefHeight="400.0" prefWidth="902.0" stylesheets="@Styles/workerForm.css">
                           <columns>
                             <TableColumn fx:id="nameColumn" prefWidth="136.0" text="Project Name" />
                             <TableColumn fx:id="ownerColumn" prefWidth="90.0" text="Owner" />
@@ -31,7 +31,7 @@
                               <TableColumn fx:id="endDateColumn" prefWidth="119.99996948242188" text="Completion Date" />
                               <TableColumn fx:id="daysColumn" prefWidth="58.4000244140625" text="Days" />
                               <TableColumn fx:id="tasksColumn" prefWidth="101.5999755859375" text="Tasks" />
-                              <TableColumn prefWidth="148.0" text="Progres" />
+                              <TableColumn fx:id="progressColumn" prefWidth="148.0" text="Progres" />
                               <TableColumn fx:id="changeData" prefWidth="75.0" />
                           </columns>
                         </TableView>
@@ -41,11 +41,16 @@
                               <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="15" />
                            </graphic>
                         </Button>
-                        <ComboBox layoutX="221.0" layoutY="24.0" prefHeight="25.0" prefWidth="100.0" />
-                        <ComboBox layoutX="334.0" layoutY="24.0" prefHeight="25.0" prefWidth="101.0" />
+                        <ComboBox fx:id="statusComboBox" layoutX="221.0" layoutY="24.0" prefHeight="25.0" prefWidth="100.0" />
+                        <ComboBox fx:id="ownerComboBox" layoutX="334.0" layoutY="24.0" prefHeight="25.0" prefWidth="101.0" />
                         <Button layoutX="446.0" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#addButton" styleClass="button-search">
                            <graphic>
                               <FontAwesomeIconView fill="WHITE" glyphName="PLUS" size="15" />
+                           </graphic>
+                        </Button>
+                        <Button layoutX="481.0" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#updateData" prefHeight="23.0" prefWidth="30.0" styleClass="tab-buttons">
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="REPEAT" />
                            </graphic>
                         </Button>
                      </children></AnchorPane>
@@ -55,53 +60,23 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <AnchorPane layoutX="19.0" layoutY="103.0" prefHeight="322.0" prefWidth="240.0" styleClass="task-panel" stylesheets="@Styles/TaskDesign.css" />
-                        <AnchorPane layoutX="19.0" layoutY="59.0" prefHeight="36.0" prefWidth="820.0" styleClass="bg-panel-task" stylesheets="@Styles/TaskDesign.css">
-                           <children>
-                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="6.0" prefHeight="24.0" prefWidth="125.0" styleClass="toDo-label" stylesheets="@Styles/TaskDesign.css" text="TO DO" textFill="WHITE">
-                                 <font>
-                                    <Font name="Segoe UI Bold" size="19.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="219.0" layoutY="4.0" text="1" textFill="#515151">
-                                 <font>
-                                    <Font size="19.0" />
-                                 </font>
-                              </Label>
-                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="281.0" layoutY="6.0" prefHeight="24.0" prefWidth="152.0" styleClass="inprogress-label" stylesheets="@Styles/TaskDesign.css" text="IN PROGRESS" textFill="WHITE">
-                                 <font>
-                                    <Font name="Segoe UI Bold" size="19.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="507.0" layoutY="4.0" text="1" textFill="#515151">
-                                 <font>
-                                    <Font size="19.0" />
-                                 </font>
-                              </Label>
-                              <Label alignment="CENTER" contentDisplay="CENTER" layoutX="560.0" layoutY="6.0" prefHeight="24.0" prefWidth="152.0" styleClass="finished-label" stylesheets="@Styles/TaskDesign.css" text="FINISHED" textFill="WHITE">
-                                 <font>
-                                    <Font name="Segoe UI Bold" size="19.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="776.0" layoutY="4.0" text="1" textFill="#515151">
-                                 <font>
-                                    <Font size="19.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </AnchorPane>
-                        <AnchorPane layoutX="296.0" layoutY="103.0" prefHeight="322.0" prefWidth="240.0" styleClass="task-panel" stylesheets="@Styles/TaskDesign.css" />
-                        <AnchorPane layoutX="573.0" layoutY="103.0" prefHeight="322.0" prefWidth="240.0" styleClass="task-panel" stylesheets="@Styles/TaskDesign.css" />
-                        <Label layoutX="29.0" layoutY="14.0" text="Tasks">
+                        <Label layoutX="24.0" layoutY="27.0" text="Tasks">
                            <font>
-                              <Font name="Segoe UI" size="25.0" />
+                              <Font name="Segoe UI Bold" size="25.0" />
                            </font>
                         </Label>
-                        <Button layoutX="109.0" layoutY="17.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="21.0" styleClass="button-search">
-                           <graphic>
-                              <FontAwesomeIconView fill="WHITE" glyphName="PLUS" size="17" text="" />
-                           </graphic>
-                        </Button>
+                        <TableView fx:id="tasksTable" layoutX="1.0" layoutY="79.0" prefHeight="470.0" prefWidth="899.0">
+                          <columns>
+                            <TableColumn fx:id="taskNameColumn" prefWidth="124.0" text="Name" />
+                            <TableColumn fx:id="taskProjectColumn" minWidth="0.0" prefWidth="119.0" text="Project" />
+                              <TableColumn fx:id="taskWorkerColumn" prefWidth="98.0" text="Worker" />
+                              <TableColumn fx:id="taskStatusColumn" prefWidth="122.0" text="Status" />
+                              <TableColumn fx:id="taskAddDateColumn" prefWidth="139.0" text="Add date" />
+                              <TableColumn fx:id="taskStartDateColumn" prefWidth="128.0" text="Start date" />
+                              <TableColumn fx:id="taskEndDateColumn" prefWidth="130.0" text="End date" />
+                              <TableColumn fx:id="taskChangeTaskColumn" prefWidth="38.0" />
+                          </columns>
+                        </TableView>
                      </children></AnchorPane>
             </content>
           </Tab>
@@ -112,7 +87,7 @@
                         <Accordion layoutX="86.0" layoutY="218.0" />
                         <AnchorPane layoutX="189.0" layoutY="190.0" prefHeight="60.0" prefWidth="60.0" styleClass="bg-avatar" />
                         <AnchorPane layoutX="91.0" layoutY="25.0" prefHeight="60.0" prefWidth="60.0" styleClass="bg-avatar" />
-                        <Circle fx:id="photoUserInAccount" fill="#a6c3df" layoutX="130.0" layoutY="134.0" radius="72.0" stroke="BLACK" strokeType="INSIDE" />
+                        <Circle fx:id="photoUserInAccount" fill="#a6c3df" layoutX="130.0" layoutY="134.0" onMouseClicked="#chooseImageForUser" radius="72.0" stroke="BLACK" strokeType="INSIDE" />
                         <Label layoutX="257.0" layoutY="55.0" text="First name" />
                         <Label layoutX="444.0" layoutY="55.0" text="Last name" />
                         <TextField fx:id="firstNameField" layoutX="257.0" layoutY="85.0" />
@@ -121,9 +96,11 @@
                         <TextField fx:id="usernameField" layoutX="257.0" layoutY="155.0" />
                         <Label layoutX="444.0" layoutY="125.0" text="Email" />
                         <TextField fx:id="emailField" layoutX="444.0" layoutY="155.0" />
-                        <Label layoutX="417.0" layoutY="210.0" text="Role" />
-                        <ComboBox fx:id="roleBox" layoutX="354.0" layoutY="230.0" prefWidth="150.0" />
-                        <Button layoutX="365.0" layoutY="300.0" mnemonicParsing="false" text="Save" />
+                        <Label layoutX="506.0" layoutY="199.0" text="Role" />
+                        <ComboBox fx:id="roleBox" layoutX="443.0" layoutY="219.0" prefWidth="150.0" />
+                        <Button fx:id="saveAccountChanges" layoutX="365.0" layoutY="300.0" mnemonicParsing="false" onMouseClicked="#saveAccChanges" text="Save" />
+                        <Label layoutX="257.0" layoutY="192.0" text="Phone" />
+                        <TextField fx:id="phoneNumberField" layoutX="257.0" layoutY="222.0" />
                      </children></AnchorPane>
               </content>
             </Tab>

@@ -1,5 +1,7 @@
 package com.example.projectsystem;
 
+import com.example.projectsystem.Alerts.AlertCreator;
+import com.example.projectsystem.Alerts.AlertManager;
 import com.example.projectsystem.Managers.AuthenticationService;
 import com.example.projectsystem.Models.Role;
 import com.example.projectsystem.Models.User;
@@ -79,10 +81,8 @@ public class LoginController {
                 openWorkerScene();
             }
         } else {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Authorize error");
-            alert.setHeaderText("Invalid username or password");
-            alert.showAndWait();
+            AlertCreator creator = new AlertManager();
+            creator.createAlert("Authorize error", "Invalid username or password", Alert.AlertType.ERROR);
         }
 
         usernameField.clear();
@@ -91,7 +91,6 @@ public class LoginController {
     }
     private void openManagerScene() throws IOException {
         Stage stage = (Stage) changeScene.getScene().getWindow();
-        // do what you have to do
         stage.close();
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("managerForm.fxml"));
         Parent root1 = (Parent) fxmlLoader.load();
@@ -105,7 +104,6 @@ public class LoginController {
     }
     private void openWorkerScene() throws IOException {
         Stage stage = (Stage) changeScene.getScene().getWindow();
-        // do what you have to do
         stage.close();
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("workerForm.fxml"));
         Parent root1 = (Parent) fxmlLoader.load();

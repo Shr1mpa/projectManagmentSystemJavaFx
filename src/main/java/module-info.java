@@ -6,6 +6,7 @@ module com.example.projectsystem {
     requires java.persistence;
     requires java.naming;
     requires java.sql;
+    requires java.desktop;
 
     requires org.postgresql.jdbc;
     requires org.hibernate.orm.core;

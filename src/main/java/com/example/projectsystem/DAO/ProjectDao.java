@@ -15,16 +15,20 @@ public class ProjectDao implements Dao<Project>{
         this.sessionFactory = sessionFactory;
     }
     @Override
-    public Optional<Project> get(long id) {
-        return Optional.empty();
+    public Optional<Project> get(int id) {
+        try (Session session = sessionFactory.openSession()) {
+            Project project = session.get(Project.class, id);
+            return Optional.ofNullable(project);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return Optional.empty();
+        }
     }
 
     @Override
     public List<Project> getAll() {
         try (Session session = sessionFactory.openSession()) {
-            // Використовуємо JOIN FETCH, щоб витягнути і завдання для кожного проєкту
-            Query<Project> query = session.createQuery("FROM Project p LEFT JOIN FETCH p.tasks", Project.class);
-            return query.list();
+            return session.createQuery("FROM Project ", Project.class).list();
         } catch (Exception e) {
             e.printStackTrace();
             return null;
@@ -48,5 +52,12 @@ public class ProjectDao implements Dao<Project>{
     @Override
     public void delete(Project entity) {
 
+    }
+    public void update(Project entity) {
+        try (Session session = sessionFactory.openSession()) {
+            session.beginTransaction();
+            session.update(entity);
+            session.getTransaction().commit();
+        }
     }
 }

@@ -16,7 +16,7 @@ public class OwnerDao implements Dao<Owner> {
         this.sessionFactory = sessionFactory;
     }
     @Override
-    public Optional<Owner> get(long id) {
+    public Optional<Owner> get(int id) {
         return Optional.empty();
     }
 
